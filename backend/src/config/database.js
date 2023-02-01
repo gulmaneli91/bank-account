@@ -1,6 +1,7 @@
 const mongoose =require('mongoose');
 mongoose.Promise = global.Promise
-module.exports = mongoose.connect('mongodb://localhost/mymoney');
+module.exports = mongoose.connect('mongodb://localhost/mymoney',
+     { useNewUrlParser: true })
 
 mongoose.Error.messages.general.required = "The atribute '{PATH}'is required."
 mongoose.Error.messages.Number.min= "The '{VALUE}'declared is less then  minimum allowed '{MIN}'."
